@@ -18,7 +18,7 @@ export class PlanetsController extends BaseController {
     }
     async create(req, res, next) {
         try {
-            res.send(req.body);
+            res.send(201, await planetsService.create(req.body));
         } catch (error) {
             next(error);
         }

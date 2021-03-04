@@ -16,11 +16,15 @@ export class StarsController extends BaseController {
             next(error);
         }
     }
+
+
     async create(req, res, next) {
         try {
-            res.send(req.body);
+            res.send(201, await starsService.create(req.body));
         } catch (error) {
             next(error);
         }
     }
+
+
 }

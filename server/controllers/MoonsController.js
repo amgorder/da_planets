@@ -18,7 +18,7 @@ export class MoonsController extends BaseController {
     }
     async create(req, res, next) {
         try {
-            res.send(req.body);
+            res.send(201, await moonsService.create(req.body));
         } catch (error) {
             next(error);
         }
